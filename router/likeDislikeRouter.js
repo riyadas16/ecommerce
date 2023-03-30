@@ -1,17 +1,17 @@
-const express=require('express');
-const router=express.Router();
-const likedislikeController=require('../controller/likeDislikeController')
-const {protect} = require('../middleware/authmiddleware')
+const express = require('express');
+const router = express.Router();
+const likedislikeController = require('../controller/likeDislikeController')
+const { protect } = require('../middleware/authMiddleware')
 
 
 
 router
-.route('/like')
-.post(protect,likedislikeController.like)
+    .route('/like')
+    .post(protect, likedislikeController.like)
 
 router
-.route('/dislike')
-.post(protect, likedislikeController.dislike)
+    .route('/dislike')
+    .post(protect, likedislikeController.dislike)
 
 
-module.exports=router
+module.exports = router

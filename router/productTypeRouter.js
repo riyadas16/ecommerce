@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const producttype = require('../controller/productTypeController')
-const { protect } = require('../middleware/authmiddleware')
+const { protect } = require('../middleware/authMiddleware')
 
 router
     .route('/create')
