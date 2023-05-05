@@ -19,7 +19,6 @@ exports.signup = async (req, res, next) => {
 
 
     else {
-
         const exp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         if (exp.test(req.body.email)) {
             const newuser = await user.create({
@@ -33,7 +32,7 @@ exports.signup = async (req, res, next) => {
             res.status(200).json({ newuser })
         }
         else {
-            return next(new AppError("email is in valid", 404))
+            return next(new AppError("email is in valid please write 'abc@gmail.com' format ", 404))
         }
     }
 }

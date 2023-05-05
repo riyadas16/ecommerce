@@ -10,7 +10,7 @@ exports.protect = async (req, res, next) => {
     }
     
     if (!token) {
-        return next(new AppError("you must be logged in first!",403))
+        return next(new AppError("you must be logged in first!",401))
     }
 
     const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET)

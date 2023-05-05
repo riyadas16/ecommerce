@@ -22,7 +22,7 @@ exports.createproduct = catchAsync(async (req, res) => {
         })
         res.status(200).json({ message: "success", create })
     } else {
-        res.status(404).json({ message: 'Product type not found' })
+        res.status(403).json({ message: 'Product type not found' })
     }
 })
 
